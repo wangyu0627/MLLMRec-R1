@@ -20,7 +20,7 @@ def parse_args():
 
     # Dataset settings
     p.add_argument("--dataset", type=str, required=True)
-    p.add_argument("--root", type=str, default="/root/autodl-tmp/RL4MSRec")
+    p.add_argument("--root", type=str, default="/root/autodl-tmp/MLLMRec-R1")
     p.add_argument("--min_inter", type=int, default=10)
     p.add_argument("--num_neg", type=int, default=9)
     p.add_argument("--seed", type=int, default=42)

@@ -10,7 +10,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="SFT Training for Rec System")
 
     parser.add_argument("--dataset", type=str, required=True,help="Dataset name")
-    parser.add_argument("--root", type=str, default="/root/autodl-tmp/RL4MSRec", help="Dataset root path")
+    parser.add_argument("--root", type=str, default="/root/autodl-tmp/MLLMRec-R1", help="Dataset root path")
     parser.add_argument("--backbone", type=str, default="Qwen3-4B", help="backbone")
     parser.add_argument("--use_cot", action="store_true", help="Enable Chain-of-Thought (CoT) reasoning in SFT prompts")
     parser.add_argument("--cot_prob", type=float, default=0.1, help="cot_prob")

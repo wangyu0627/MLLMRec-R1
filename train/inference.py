@@ -16,7 +16,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Top-K generation eval for RecSFT model")
 
     parser.add_argument("--dataset", type=str, required=True, help="Dataset name, e.g. microlens / netflix / movielens ...")
-    parser.add_argument("--root", type=str, default="/root/autodl-tmp/RL4MSRec", help="Project root path")
+    parser.add_argument("--root", type=str, default="/root/autodl-tmp/MLLMRec-R1", help="Project root path")
     parser.add_argument("--backbone", type=str, default="Qwen3-4B", help="Backbone")
     parser.add_argument("--top_k", type=int, default=3, help="Top-K for HR@K and NDCG@K")
     parser.add_argument("--min_inter", type=int, default=10, help="user sequence length")
