@@ -1,6 +1,9 @@
 # MLLMRec-R1
 MLLMRec-R1: Incentivizing Reasoning Capability in Large Language Models for Multimodal Sequential Recommendation
 
+## Model Architecture
+<img src='data.png' />
+
 ## 🧰 Environment Setup for MLLMRec-R1
 
 You can run the following command to download the codes faster:
