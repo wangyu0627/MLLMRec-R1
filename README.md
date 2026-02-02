@@ -47,7 +47,7 @@ Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you mus
 /absolute_path/MLLMRec-R1//Qwen3-VL-8B-Instruct/
 ```
 
-## ♻️ Reproducibility with Agent Pipeline (Caption → Pseudo-CoT → Reasoning)
+## ♻️ Agent Pipeline for Multimodal CoT (Caption → Pseudo-CoT → Reasoning)
 If you would like to fully reproduce our data construction process, you can directly use the scripts provided in agent/. 
 
 The recommended pipeline follows three stages in order: (1) caption generation → (2) pseudo-CoT construction → (3) reasoning refinement.
