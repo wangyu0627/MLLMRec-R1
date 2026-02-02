@@ -41,10 +41,15 @@ data/
 
 ## Download Backbone Model
 
-Before running **Step 1 (SFT)** and subsequent steps, you must first download the **Qwen3-4B** and place it under the following directory:
+Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you must first download the **Qwen3-4B/Qwen3-VL-8B-Instruct** and place it under the following directory:
 ```plaintext
 /absolute_path/MLLMRec-R1/Qwen3-4B/
+/absolute_path/MLLMRec-R1//Qwen3-VL-8B-Instruct/
 ```
+
+# ♻️ Reproducibility with Agent Pipeline (Caption → Pseudo-CoT → Reasoning)
+If you would like to fully reproduce our data construction process, you can directly use the scripts provided in agent/. The recommended pipeline follows three stages in order: (1) caption generation → (2) pseudo-CoT construction → (3) reasoning refinement.
+In most cases, you only need to modify two parameters: DATASET_NAME (e.g., movielens, microlens, netflix) and root (the absolute path to the project directory). All other hyper-parameters can remain as default.
 
 # 🚀 Examples to run the codes
 ## Step 1: Supervised Fine-Tuning (SFT)
