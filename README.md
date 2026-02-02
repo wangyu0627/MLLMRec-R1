@@ -1,7 +1,7 @@
-# MLLMRec-R1
+# 🤖 MLLMRec-R1
 MLLMRec-R1: Incentivizing Reasoning Capability in Large Language Models for Multimodal Sequential Recommendation
 
-## Model Architecture
+## 🏗️ Model Architecture
 <img src='data.png' />
 
 ## 🧰 Environment Setup for MLLMRec-R1
@@ -39,7 +39,7 @@ data/
 └── netflix/                        # Same structure as MovieLens
 ```
 
-## Download Backbone Model
+## 🧱 Download Backbone Model
 
 Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you must first download the **Qwen3-4B/Qwen3-VL-8B-Instruct** and place it under the following directory:
 ```plaintext
@@ -48,7 +48,7 @@ Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you mus
 ```
 
 # ♻️ Agent Pipeline for Multimodal CoT 
-## (Caption → Pseudo-CoT → Reasoning)
+## ✍️ (Caption → 🧩 Pseudo-CoT → 🧠 Reasoning)
 If you would like to fully reproduce our data construction process, you can directly use the scripts provided in agent/. 
 
 The recommended pipeline follows three stages in order: (1) caption generation → (2) pseudo-CoT construction → (3) reasoning refinement.
@@ -56,22 +56,22 @@ The recommended pipeline follows three stages in order: (1) caption generation �
 In most cases, you only need to modify two parameters: DATASET_NAME (e.g., movielens, microlens, netflix) and root (the absolute path to the project directory). All other hyper-parameters can remain as default.
 
 # 🚀 Examples to run the codes
-## Step 1: Supervised Fine-Tuning (SFT)
+## 🧑‍🏫 Step 1: Supervised Fine-Tuning (SFT)
 > **Note:** `--root` must be the **absolute path** to the project directory (i.e., the folder that contains `train/`, `data/`, etc.).
-### MovieLens
+### 🎬 MovieLens
 ```bash
 python train/sft.py --root /absolute_path/MLLMRec-R1 --backbone Qwen3-4B --use_cot --cot_prob 0.1 --dataset movielens --min_inter 10 --tag qwen3_4b_sft_cot
 ```
-### Microlens
+### 🔬 Microlens
 ```bash
 python train/sft.py --root /absolute_path/MLLMRec-R1 --backbone Qwen3-4B --use_cot --cot_prob 0.1 --epochs 5 --dataset microlens --min_inter 10 --tag qwen3_4b_sft_cot
 ```
-### Netflix
+### 📺 Netflix
 ```bash
 python train/sft.py --root /absolute_path/MLLMRec-R1 --backbone Qwen3-4B --use_cot --cot_prob 0.1 --dataset netflix --min_inter 5 --tag qwen3_4b_sft_cot
 ```
 
-## Step 2: Merge LoRA into the Base Model (GPU 0)
+## 🧬 Step 2: Merge LoRA into the Base Model (GPU 0)
 After SFT, the LoRA checkpoints are saved under:
 ```plaintext
 checkpoints/<dataset>/qwen3_4b_sft_cot
@@ -101,7 +101,7 @@ After merging, the final merged checkpoint will be saved under:
 checkpoints/<dataset>/<MERGED_NAME>/
 ```
 
-## Step 3: GRPO Post-Training (Reinforcement Fine-Tuning)
+## 🧠 Step 3: GRPO Post-Training (Reinforcement Fine-Tuning)
 Run GRPO to further align the model with preference/reward signals. Make sure `--sft_tag` matches the merged checkpoint folder name produced in Step 2 (e.g., `Qwen3-4B-COT-SFT`).
 ### MovieLens
 ```bash
@@ -116,7 +116,7 @@ python train/grpo.py --dataset microlens --use_cot --cot_prob 0.1 --epochs 3 --r
 python train/grpo.py --dataset netflix --use_cot --cot_prob 0.05 --epochs 2 --root /absolute_path/MLLMRec-R1 --min_inter 5 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.2
 ```
 
-## Step 4: Evaluation (Distributed Inference)
+## 📈 Step 4: Evaluation (Distributed Inference)
 Before running evaluation, **explicitly specify the GPUs to use** by setting `CUDA_VISIBLE_DEVICES`. This ensures the evaluation only uses the intended devices and matches `--nproc_per_node`.
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1
