@@ -28,8 +28,8 @@ data/
 │   ├── images/                     # Item images (optional, used for MSR)
 │   ├── processed/                  # sample
 │   │   ├── test_generate_seed42_neg9.json
-│   │   ├── train_generate_seed42_neg9_cot_0.0.json
-│   │   └── train_generate_seed42_neg9_cot_0.1.json
+│   │   ├── train_train_seed42_neg9_cot_0.1.json
+│   │   └── train_generate_seed42_neg9_cot_0.05.json
 │   ├── movielens_deepseek_cot.json # Multimodal CoT
 │   │                               
 │   ├── movielens_pairs.csv         # Preference pairs (positive/negative, pairwise)
