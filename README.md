@@ -32,7 +32,6 @@ You can download processed data files in the following datasets:
 > ```plaintext
 > cd /absolute_path/MLLMRec-R1
 > unzip data-mllmrec-r1.zip
-> mv data-mllmrec-r1 data
 > ```
 > 
 ```plaintext
