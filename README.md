@@ -131,11 +131,11 @@ python train/grpo.py --dataset netflix --use_cot --cot_prob 0.05 --epochs 2 --ro
 ```
 ### ✅ GRPO (Post-Training)
 
-| Dataset   | use CoT | cot_prob | epochs | min_inter | #generations | beta | save_steps | sft_tag           | tag               |
-|:---------:|:-------:|:--------:|:------:|:---------:|:------------:|-----:|-----------:|-------------------|-------------------|
-| movielens |   ✓     |  0.05    |   3    |    10     |      8       | 0.10 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
-| microlens |   ✓     |  0.10    |   3    |    10     |      8       | 0.05 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
-| netflix   |   ✓     |  0.05    |   2    |     5     |      8       | 0.20 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
+| Dataset   | cot_prob | epochs | min_inter | #generations | beta |
+|:---------:|:--------:|:------:|:---------:|:------------:|-----:|
+| movielens |  0.05    |   3    |    10     |      8       | 0.10 |
+| microlens |  0.10    |   3    |    10     |      8       | 0.05 |
+| netflix   |  0.05    |   2    |     5     |      8       | 0.20 |
 
 
 ## 📈 Step 4: Evaluation (Distributed Inference)
