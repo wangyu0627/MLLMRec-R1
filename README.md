@@ -129,6 +129,14 @@ python train/grpo.py --dataset microlens --use_cot --cot_prob 0.1 --epochs 3 --r
 ```bash
 python train/grpo.py --dataset netflix --use_cot --cot_prob 0.05 --epochs 2 --root /absolute_path/MLLMRec-R1 --min_inter 5 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.2
 ```
+### ✅ GRPO (Post-Training)
+
+| Dataset   | use CoT | cot_prob | epochs | min_inter | #generations | beta | save_steps | sft_tag           | tag               |
+|:---------:|:-------:|:--------:|:------:|:---------:|:------------:|-----:|-----------:|-------------------|-------------------|
+| movielens |   ✓     |  0.05    |   3    |    10     |      8       | 0.10 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
+| microlens |   ✓     |  0.10    |   3    |    10     |      8       | 0.05 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
+| netflix   |   ✓     |  0.05    |   2    |     5     |      8       | 0.20 |    500     | Qwen3-4B-COT-SFT  | qwen3_4b_grpo_cot |
+
 
 ## 📈 Step 4: Evaluation (Distributed Inference)
 Before running evaluation, **explicitly specify the GPUs to use** by setting `CUDA_VISIBLE_DEVICES`. This ensures the evaluation only uses the intended devices and matches `--nproc_per_node`.
