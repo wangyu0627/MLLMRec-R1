@@ -12,7 +12,7 @@ You can run the following command to download the codes faster:
 conda create -y -n mllmrec python=3.11
 conda activate mllmrec
 pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu128
-pip install transformers==4.57.3 trl==0.26.2 tqdm==4.67.1 pandas==2.3.3 peft==0.18.0 accelerate==1.12.0
+pip install transformers==4.57.3 trl==0.26.2 tqdm==4.67.1 pandas==2.3.3 peft==0.18.0 accelerate==1.12.0 modelscope
 ```
 > 📦 **Install Codebase**
 ```bash
@@ -59,6 +59,7 @@ Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you mus
 ```plaintext
 /absolute_path/MLLMRec-R1/Qwen3-4B/
 /absolute_path/MLLMRec-R1/Qwen3-VL-8B-Instruct/
+modelscope download --model Qwen/Qwen3-4B --local_dir Qwen3-4B
 ```
 
 # ♻️ Agent Pipeline for Multimodal CoT 
