@@ -148,14 +148,14 @@ Evaluate the GRPO-trained model using distributed inference. Ensure that `--tag`
 checkpoints/<dataset>/qwen3_4b_sft_grpo
 ```
 
-### 🎬MovieLens/🔬Microlens/📺Netflix
-**To switch datasets, simply change the value of --dataset (e.g., movielens, microlens, netflix).**
+### 🎬 MovieLens / 🔬 MicroLens / 📺 Netflix
 
-**To switch top-k, simply change the value of --top_k (e.g., 3, 5).**
-
-**To switch num_negative, simply change the value of --num_neg (e.g., 9, 99).**
-
-**When running multiple distributed jobs concurrently, change the port in --rdzv_endpoint (e.g., 29601, 29602, 29603, ...) to avoid port conflicts.**
+| Purpose                         | Argument            | Example Values                  |
+|---------------------------------|---------------------|---------------------------------|
+| Switch dataset                  | `--dataset`         | movielens, microlens, netflix   |
+| Switch top-K                    | `--top_k`           | 3, 5                            |
+| Switch number of negatives      | `--num_neg`         | 9, 99                           |
+| Run concurrent distributed jobs | `--rdzv_endpoint`   | 29601, 29602, 29603, …          |
 
 ```bash
 torchrun --nproc_per_node=2 --rdzv_backend=c10d --rdzv_endpoint=localhost:29601 train/inference.py --root /absolute_path/MLLMRec-R1 --dataset movielens --min_inter 10 --top_k 3 --num_neg 9 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --distributed
