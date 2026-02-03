@@ -24,6 +24,7 @@ Move `MLLMRec-R1-main.zip` to `/absolute_path/` and unzip it as follows:
 cd /absolute_path
 unzip MLLMRec-R1-main.zip
 mv MLLMRec-R1-main MLLMRec-R1
+```
 
 ## 💡 Dataset Structure and Download
 
