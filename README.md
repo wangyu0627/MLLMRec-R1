@@ -20,7 +20,14 @@ pip install transformers==4.57.3 trl==0.26.2 tqdm==4.67.1 pandas==2.3.3 peft==0.
 You can download processed data files in the following datasets:
 
 **Movielens**/ **Microlens**/ **Netflix** [[Google Drive]](https://drive.google.com/file/d/13cjTpuRXUHDi7aw76i6fUWmmeNISZZWG/view)
-
+> 📌 **Important:** After downloading and extracting, please place the `data/` directory under  
+> `/absolute_path/MLLMRec-R1/`, i.e.,
+>
+> ```plaintext
+> cd /absolute_path/MLLMRec-R1
+> unzip data-mllmrec-r1.zip
+> ```
+> 
 ```plaintext
 data/
 ├── microlens/                      # Same structure as MovieLens
