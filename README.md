@@ -59,7 +59,7 @@ Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you mus
 ```plaintext
 /absolute_path/MLLMRec-R1/Qwen3-4B/
 /absolute_path/MLLMRec-R1/Qwen3-VL-8B-Instruct/
-modelscope download --model Qwen/Qwen3-4B --local_dir Qwen3-4B
+example code: modelscope download --model Qwen/Qwen3-4B --local_dir Qwen3-4B
 ```
 
 # ♻️ Agent Pipeline for Multimodal CoT 
