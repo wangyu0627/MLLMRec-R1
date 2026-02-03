@@ -57,7 +57,7 @@ data/
 Before running **Step 1 (SFT) and Multimodal CoT** and subsequent steps, you must first download the **Qwen3-4B/Qwen3-VL-8B-Instruct** and place it under the following directory:
 ```plaintext
 /absolute_path/MLLMRec-R1/Qwen3-4B/
-/absolute_path/MLLMRec-R1//Qwen3-VL-8B-Instruct/
+/absolute_path/MLLMRec-R1/Qwen3-VL-8B-Instruct/
 ```
 
 # ♻️ Agent Pipeline for Multimodal CoT 
