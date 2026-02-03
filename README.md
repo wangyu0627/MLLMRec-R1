@@ -129,7 +129,7 @@ python train/grpo.py --dataset microlens --use_cot --cot_prob 0.1 --epochs 3 --r
 ```bash
 python train/grpo.py --dataset netflix --use_cot --cot_prob 0.05 --epochs 2 --root /absolute_path/MLLMRec-R1 --min_inter 5 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.2
 ```
-### ✅ GRPO (Post-Training)
+### ✅ GRPO Optimal Parameters
 
 | Dataset   | cot_prob | epochs | min_inter | #generations | beta |
 |:---------:|:--------:|:------:|:---------:|:------------:|-----:|
