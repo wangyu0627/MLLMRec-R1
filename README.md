@@ -153,7 +153,7 @@ checkpoints/<dataset>/qwen3_4b_sft_grpo
 | Purpose                         | Argument            | Example Values                  |
 |---------------------------------|---------------------|---------------------------------|
 | Switch dataset                  | `--dataset`         | movielens, microlens, netflix   |
-| Switch top-K                    | `--top_k`           | 3, 5                            |
+| Switch top-K                    | `--top_k`           | 3, 5, 10                        |
 | Switch number of negatives      | `--num_neg`         | 9, 99                           |
 | Run concurrent distributed jobs | `--rdzv_endpoint`   | 29601, 29602, 29603, …          |
 
