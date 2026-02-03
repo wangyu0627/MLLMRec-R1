@@ -133,7 +133,7 @@ checkpoints/<dataset>/qwen3_4b_sft_grpo
 
 **To switch num_negative, simply change the value of --num_neg (e.g., 9, 99).**
 
-When running multiple distributed jobs concurrently, change the port in --rdzv_endpoint (e.g., 29601, 29602, 29603, ...) to avoid port conflicts.
+**When running multiple distributed jobs concurrently, change the port in --rdzv_endpoint (e.g., 29601, 29602, 29603, ...) to avoid port conflicts.**
 
 ```bash
 torchrun --nproc_per_node=2 --rdzv_backend=c10d --rdzv_endpoint=localhost:29601 train/inference.py --root /absolute_path/MLLMRec-R1 --dataset movielens --min_inter 10 --top_k 3 --num_neg 9 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --distributed
