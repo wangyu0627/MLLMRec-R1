@@ -15,11 +15,6 @@ pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https
 pip install transformers==4.57.3 trl==0.26.2 tqdm==4.67.1 pandas==2.3.3 peft==0.18.0 accelerate==1.12.0
 ```
 > 📦 **Install Codebase**
-
-Before downloading and extracting the dataset, please first install the project codebase.
-
-Move `MLLMRec-R1-main.zip` to `/absolute_path/` and unzip it as follows:
-
 ```bash
 cd /absolute_path
 unzip MLLMRec-R1-main.zip
