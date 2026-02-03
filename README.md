@@ -103,15 +103,15 @@ checkpoints/<dataset>/<MERGED_NAME>/
 
 ## 🧠 Step 3: GRPO Post-Training (Reinforcement Fine-Tuning)
 Run GRPO to further align the model with preference/reward signals. Make sure `--sft_tag` matches the merged checkpoint folder name produced in Step 2 (e.g., `Qwen3-4B-COT-SFT`).
-### MovieLens
+### 🎬 MovieLens
 ```bash
 python train/grpo.py --dataset movielens --use_cot --cot_prob 0.05 --epochs 3 --root /absolute_path/MLLMRec-R1 --min_inter 10 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.1 
 ```
-### Microlens
+### 🔬 Microlens
 ```bash
 python train/grpo.py --dataset microlens --use_cot --cot_prob 0.1 --epochs 3 --root /absolute_path/MLLMRec-R1 --min_inter 10 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.05
 ```
-### Netflix
+### 📺 Netflix
 ```bash
 python train/grpo.py --dataset netflix --use_cot --cot_prob 0.05 --epochs 2 --root /absolute_path/MLLMRec-R1 --min_inter 5 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --save_steps 500 --num_generations 8 --beta 0.2
 ```
@@ -126,11 +126,17 @@ Evaluate the GRPO-trained model using distributed inference. Ensure that `--tag`
 checkpoints/<dataset>/qwen3_4b_sft_grpo
 ```
 
-### MovieLens/Microlens/Netflix
-To switch datasets, simply change the value of --dataset (e.g., movielens, microlens, netflix).
+### 🎬MovieLens/🔬Microlens/📺Netflix
+**To switch datasets, simply change the value of --dataset (e.g., movielens, microlens, netflix).**
+
+**To switch top-k, simply change the value of --top_k (e.g., 3, 5).**
+
+**To switch num_negative, simply change the value of --num_neg (e.g., 9, 99).**
+
 When running multiple distributed jobs concurrently, change the port in --rdzv_endpoint (e.g., 29601, 29602, 29603, ...) to avoid port conflicts.
+
 ```bash
-torchrun --nproc_per_node=2 --rdzv_backend=c10d --rdzv_endpoint=localhost:29601 train/inference.py --root /absolute_path/MLLMRec-R1 --dataset movielens --min_inter 10 --top_k 3 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --distributed
+torchrun --nproc_per_node=2 --rdzv_backend=c10d --rdzv_endpoint=localhost:29601 train/inference.py --root /absolute_path/MLLMRec-R1 --dataset movielens --min_inter 10 --top_k 3 --num_neg 9 --sft_tag Qwen3-4B-COT-SFT --tag qwen3_4b_grpo_cot --distributed
 ```
 
 
