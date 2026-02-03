@@ -21,7 +21,7 @@ You can download processed data files in the following datasets:
 
 **Movielens**/ **Microlens**/ **Netflix** [[Google Drive]](https://drive.google.com/file/d/13cjTpuRXUHDi7aw76i6fUWmmeNISZZWG/view)
 > 📌 **Important:** After downloading and extracting, please place the `data/` directory under  
-> `/absolute_path/MLLMRec-R1/`, i.e.,
+> `/absolute_path/MLLMRec-R1/`
 >
 > ```plaintext
 > cd /absolute_path/MLLMRec-R1
