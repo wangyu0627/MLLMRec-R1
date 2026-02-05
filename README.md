@@ -106,7 +106,7 @@ MERGED_NAME = "Qwen3-4B-COT-SFT"
 Use CUDA_VISIBLE_DEVICES=0 to force the merge to run on GPU 0:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python lora_merge.py
+CUDA_VISIBLE_DEVICES=0 python checkpoints/lora_merge.py
 ```
 
 After merging, the final merged checkpoint will be saved under:
