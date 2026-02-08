@@ -25,7 +25,7 @@ mv MLLMRec-R1-main MLLMRec-R1
 
 You can download processed data files in the following datasets:
 
-**Movielens**/ **Microlens**/ **Netflix** [[Google Drive]](https://drive.google.com/file/d/1bLaC6H648SkIjw-8L6gaJihjljrSACbZ/view)
+**Movielens**/ **Microlens**/ **Netflix** [[Google Drive]](https://drive.google.com/file/d/13gaI8aZiXtExoKFM1r9D9YzGhfTWB0xB/view)
 > 📌 **Important:** After downloading and extracting, please place the `data/` directory under  
 > `/absolute_path/MLLMRec-R1/`
 >
